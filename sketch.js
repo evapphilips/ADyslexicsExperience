@@ -20,7 +20,7 @@ let visualLib = [];
 let imgArray = [];
 let imgX;
 let imgY;
-let imgSize = 100;
+let imgSize = 200;
 
 // submit variables
 let submitArray = [];
@@ -86,6 +86,8 @@ function draw() {
   // clear/restart
   if (clearButton == 1) {
     background(220);
+    //textSize(20);
+    //text("To begin, scan a coin on the 'Learn' section of the board", width/2, 50)
     wordArray = [];
     imgArray = [];
   }
@@ -141,15 +143,18 @@ function writeSection() {
       wordArray.push(alphArray[i]);
       currentWord = join(wordArray, " ");
       textAlign(CENTER);
-      textSize(80);
-      text(currentWord, (width / 2) - (currentWord.length / 2), height / 2 + 200);
+      //textSize(80);
+      textSize(150);
+      text(currentWord, (width / 2) - (currentWord.length / 2), height / 2 + 300);
+      //text(currentWord, (width / 2) - (currentWord.length / 2), windowHeight / 2 + 200)
       // img/symbols definted
       imgArray.push(visualLib[i]);
     }
   }
   // img/symbol display
   imgX = (width / 2) - ((imgArray.length * imgSize) / 2);
-  imgY = (height / 2) - (imgSize / 2);
+  //imgY = (height / 2) - (imgSize / 2);
+  imgY = (windowHeight / 2) - (imgSize / 2);
   for (let i = 0; i < imgArray.length; i++) {
     image(imgArray[i], imgX, imgY, imgSize, imgSize);
     imgX = imgX + imgSize;
